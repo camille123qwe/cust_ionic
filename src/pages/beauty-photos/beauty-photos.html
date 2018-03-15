@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>美女图片</ion-title>
+  </ion-navbar>
+  <div class="my-hr"></div>
+  <ion-row class="tab_header">
+    <ion-col (click)="selectedLeft()" [ngClass]="tab1_class">美腿</ion-col>
+    <ion-col (click)="selectedRight()" [ngClass]="tab2_class">清纯</ion-col>
+  </ion-row>
+  <div class="my-hr"></div>
+</ion-header>
+
+
+<ion-content>
+
+  <div [ngSwitch]="type" class="legs">
+  	
+    <div *ngSwitchCase="'left'" class="legs-l">
+      <ion-col *ngFor="let beauty of legs_list_l" class="legs_list">
+        <img src={{beauty.smallimg}} alt="*" class="beauty-img" (click)='SidesL(beauty)'/>
+      </ion-col>
+    </div>
+    
+    <div *ngSwitchCase="'left'" class="legs-r">
+      <ion-col *ngFor="let beauty of legs_list_r" class="legs_list">
+        <img src={{beauty.smallimg}} alt="*" class="beauty-img" (click)='SidesL(beauty)'/>
+      </ion-col>
+    </div>
+    
+
+    <div *ngSwitchCase="'right'" class="pure-l">
+      <ion-col *ngFor="let beauty of pure_list_l" class="pure_list">
+        <img src={{beauty.smallimg}} alt="*" class="beauty-img" (click)='SidesP(beauty)' />
+      </ion-col>
+    </div>
+    
+    <div *ngSwitchCase="'right'" class="pure-r">
+      <ion-col *ngFor="let beauty of pure_list_r" class="pure_list">
+        <img src={{beauty.smallimg}} alt="*" class="beauty-img" (click)='SidesP(beauty)' />
+      </ion-col>
+    </div>
+
+  </div>
+  
+ 
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,170 @@
+page-home-delivery {
+    .center-myInput{
+        // background: rgba(0, 0, 0, 0.2);
+        padding: 5px 10px 5px;
+    }
+    .content{
+        background: #f2f2f2;
+    }
+    .banner-img{
+        width: 100%;
+        height: 20%;
+    }
+    .banner-img img{
+         width: 100%;
+         height: 100%;
+    }
+
+    // background: #efefef;
+  .menus {
+      
+      max-width: 80px !important;
+    height: 100%;
+    overflow: hidden !important;
+    ion-scroll {
+      background-color: #efefef;
+     max-width: 80px !important;
+     overflow: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important
+    }
+    .item-ios{
+        padding-left: 8px !important
+    }
+  }
+  .items {
+    height: 100%;
+    ion-scroll {
+      background-color: #fff;
+    }
+  }
+  ion-grid {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    ion-row {
+      padding: 0px;
+      margin: 0px;
+      height: 100%;
+      ion-col {
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+  }
+  ion-list {
+    ion-item {
+      background: #efefef;
+    }
+  }
+  .product {
+    .scroll-content {
+      margin-bottom: 0px;
+    }
+  }
+  .menus {
+    .active {
+      background: #fff;
+    }
+    ion-item {
+      background: #efefef;
+      ion-label {
+        font-family: "黑体";
+        font-size: 90%;
+      }
+    }
+  }
+  .item-ios [item-left], .item-ios [item-start]{
+      margin: 8px 8px 8px 0;
+  }
+
+  @media screen and (max-device-width: 320px) {
+		.img_class{
+      width: 94px !important;
+      height: 65px !important;
+  }
+  .distance{
+      // float: right;
+      font-size: 10px;
+  }
+  .item-right{
+      // float: right;
+      font-size: 10px;
+      color: #f02e2e;
+  }
+	}
+	@media screen and (min-device-width:321px) and (max-device-width:375px) {
+		.img_class{
+      width: 111px !important;
+      height: 83px !important;
+  }
+  .distance{
+      float: right;
+      font-size: 10px;
+  }
+  .item-right{
+      float: right;
+      font-size: 10px;
+      color: #f02e2e;
+  }
+	}
+	@media screen and (min-device-width:376px) {
+		.img_class{
+      width: 111px !important;
+      height: 83px !important;
+  }
+  .distance{
+      float: right;
+      font-size: 10px;
+  }
+  .item-right{
+      float: right;
+      font-size: 10px;
+      color: #f02e2e;
+  }
+	}
+  // flex: 
+  
+  .item-header{
+      font-size: 15px;
+      color: #333;
+       word-wrap: break-word;
+    word-break: normal;
+  }
+  .item-address{
+  font-size: 10px;
+    color: #888;
+    display: inline-block;
+  }
+  
+  
+  .item-discounts{
+     font-size: 10px;
+      color: #f02e2e;
+  }
+  
+  ion-label .item-address{
+    word-wrap: break-word !important;
+    word-break: normal !important;
+  }
+  .items .scroll-zoom-wrapper{
+    padding-left: 8px !important;
+  }
+  .items .item-ios{
+    padding-left: 0px !important;
+     border-bottom: 1px solid #eaeaea !important;
+    .item-inner{
+      border:0 !important;
+    }
+    .ion-item{
+     
+    }
+  }
+  #item-hr{
+    width: 100%;
+    height: 1px;
+    background:  #eaeaea !important;
+    margin: 5px 0 10px;
+  }
+  
+}

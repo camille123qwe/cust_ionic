@@ -1,0 +1,192 @@
+page-return-request {
+    .scroll-content{
+        background: #efeff4;
+    }
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{
+        border-color: #c9c9c9;
+    }
+    .item-inner{
+        border: none!important;
+    }
+    .item-textarea{
+        height: 157px;
+        margin-bottom: 11px;
+    }
+    .item-textarea .label-ios{
+        font-size: 14px;
+        color: #333;
+    }
+    .item-textarea .input-ios{
+        font-size: 14px;
+        color: #888;
+    }
+    .footer-ios .toolbar-ios:first-child .toolbar-background-ios{
+        background: #ff0036;
+    }
+    .footer-ios .toolbar-ios:first-child .toolbar-background-ios{
+        border-width: 0!important;
+    }
+    .footer-ios .toolbar-title {
+        font-size: 15px;
+        color: #ffffff;
+        font-weight: normal;
+    }
+//     .item-block:first-child{
+//     border-top: 6px #efeff4 solid!important;
+// }
+//   .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+//     border-bottom: none;
+//   }
+//   .item-ios.item-block .item-inner{
+//     padding: 0 12.5px;
+//     border-bottom: none!important;
+//   }
+//   .input-wrapper{
+//     border-bottom:solid 1px #c9c9c9;
+//     font-size: 14px;
+//     color: #333;
+//   }
+//  .endItem .input-wrapper{
+//       border-bottom:none!important;
+//   }
+//   .item-ios{
+//     padding-left: 0!important;
+//   }
+//   .label-ios{
+//     margin: 0!important;
+//   }
+//   .item-ios p{
+//     margin: 0!important;
+//   }
+//   .item-ios [item-left], .item-ios [item-start]{
+//     margin: 0!important;
+//   }
+//   .list-ios .item-block .item-inner{
+//     border-bottom: none!important;
+//   }
+//   .scroll-content{
+//     font-size: 14px;
+//     color: #333;
+//   }
+//   .badge-unread[item-left]{
+//     width:14px;
+//     height: 14px;
+//     align-self: flex-start;
+//     margin-top: 15px;
+//   }
+//  .undeliveryitem .item-div>span:last-child{
+//     float: right;
+//     padding-right: 10px;
+//     color: #fb3b07;
+//   }
+//  .list-ios { 
+//     margin: 0px 0 32px 0;
+//  }
+// .goodsSpan{
+//     float: right;
+//     padding-right: 10px;
+//     font-size: 14px;
+//     color: #666;
+// }
+// ion-label{
+//     width: 20%;
+// }
+.reissue_item ion-label{
+    width: 70%
+}
+.reissue_item .label-ios + ion-input .text-input,.reissue_item .label-ios + ion-textarea .text-input,.reissue_item .label-ios + .input + .cloned-input{
+    width: 30%;
+    float: right;
+}
+.list-ios{
+    margin: 0;
+}
+.list-ios > .item-block:last-child .input-wrapper, page-shipping .list-ios > .item-wrapper:last-child .item-block .input-wrapper{
+    border-bottom: none!important;
+}
+  .zhaoxiangji{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        color: #1e82d2;
+    }
+    .paizhao{
+        margin: 0 auto;
+        height: 40px;
+        width: 78px;
+        border: 1px solid #1e82d2;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 49px;
+        margin-top: 20px;
+    }
+    .paizhao img{
+        width: 25px;
+        height:22px; 
+    }
+    .tishi{
+        margin-top: 25px;
+        color: #1e82d2;
+        font-size: 12px;
+    }
+    .shoutu_box{
+        padding: 20px;
+    }
+    .shoutu{
+        width: 80px;
+        height: 92px;
+    }
+     .pictures_col{
+            height: 100px;
+        }
+        .pictures_col img{
+            width: 100%;
+            height: 75%;
+    }
+    .login button{
+        margin-top: 20px;
+    }
+   .login{
+        padding-bottom: 40px;
+    }
+    .opentime{
+        padding-left: 0 !important;
+        
+    }
+    .opentime ion-label{
+        max-width: 67px !important;
+    }
+    .opentime ion-select{
+        border: 1px solid #c9c9c9 !important;
+        border-radius: 3px !important; 
+    }
+    .select-ios{
+        padding: 5px !important;
+    }
+    .select2{
+        margin-left: 15px !important;
+    }
+    .select-text{
+        font-size: 14px !important;
+    }
+    .guige div{
+        padding: 12px 0;
+    }
+    .guige span{
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+    }
+    .guige span:last-child{
+        float: right;
+        overflow: hidden;
+    }
+    .guige_input{
+        outline: none;
+        border: none;
+        display: inline-block;
+        width: 80%!important;
+    }
+
+
+}

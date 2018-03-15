@@ -1,0 +1,171 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title (click)="chaxunrenwu()">{{shopInfo.storename}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="fenxiang()">
+        <img [src]="FxIMg" class="img-header" />
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!--kaishi  -->
+  <ion-item class="storeface">
+    <img [src]='StoreImg[0]' class="storefaceimg" (tap)="preview(item)">
+    <p class="storeaddr">{{shopInfo.storeaddr}}</p>
+    <div class="icon-img playCall">
+      <img src="assets/img/icon_lianxi@2x.png">
+      <a [href]="tel_str" id="a_tel"></a>
+    </div>
+    <div class="infoitem">
+      <p class="distance">{{shopInfo.distance}}</p>
+      <p>{{shopInfo.opentime}}--{{shopInfo.closetime}}</p>
+    </div>
+    <div class="icon-img col-center" (tap)='toFollow()' *ngIf="!followed">
+      <ion-icon name="ios-heart-outline"></ion-icon>
+      <!-- <P>点击关注</P> -->
+    </div>
+    <div class="icon-img col-center" *ngIf="followed">
+      <ion-icon name="ios-heart" color="orange">
+      </ion-icon>
+      <!-- <p>已关注</p> -->
+    </div>
+
+  </ion-item>
+  <ion-item class="list_margin_item" [hidden]='tho' (tap)="zhankai()">
+    <span>{{yhfirst.quantitle}}</span>
+    <i>共{{yhPrivilegelist.length+1}}条优惠</i>
+    <ion-icon name="ios-arrow-down" item-right color="line-gray"></ion-icon>
+  </ion-item>
+  <ion-list [hidden]='tholist' class="yhlist">
+    <ion-item class="list_margin_item" *ngFor="let item of yhPrivilegelist">
+      <span>{{item.quantitle}}</span>
+    </ion-item>
+  </ion-list>
+  
+  <ion-slides autoplay=3000  loop=true class="goActive">
+    <ion-slide [ngClass]="slide_img" *ngFor="let item of banners" >
+      <img (tap)="active(item)" src={{item.src}}>
+    </ion-slide> 
+  </ion-slides>
+  
+  <ion-item class="service" *ngIf="isService||isDelivery">服务</ion-item>
+  <ion-list *ngIf="isService">
+    <ion-item class="service-info" *ngFor="let item of booklist">
+      <div>
+        <p>{{item.servicename}}</p>
+        <!-- <p class="service-mark">服务价格不包含更换零件的费用</p> -->
+        <p>服务费用
+          <span *ngIf='ifshow(item.serviceprice)'>￥{{item.serviceprice}}</span>
+        </p>
+      </div>
+      <ion-note item-right>
+        <button ion-button clear item-right class="follow" (tap)="book(item)">立即预约</button>
+      </ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="isDelivery">
+    <ion-item class="service-info" *ngFor="let item of deliverylist">
+      <div>
+        <p>三公里送货上门</p>
+        <p class="service-mark">
+          <span *ngIf='ifshow(item.sendPrice)'>{{item.sendPrice}}元起送</span>
+          <span *ngIf='ifshow(item.sendFreePrice)'>{{item.sendFreePrice}}元免配送费</span>
+        </p>
+      </div>
+      <ion-note item-right>
+        <button ion-button clear item-right class="follow" (tap)="qianggou()">去抢购</button>
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <!--jieshu  -->
+  <!-- <div class="title_banner">
+    <ion-slides pager=true>
+      <ion-slide *ngFor="let item of StoreImg">
+        <img [src]='item' class="title_banner" [ngStyle]='silderimg' onerror="javascript:this.src='assets/img/bm_imge@2x.png';" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <span [ngClass]=''></span>
+  <ion-item class="single-item"> 
+    <img  src="assets/img/icon_dizhi@2x.png" alt="*" id="dingwei"/>
+    <span class="item-address"> 
+      {{shopInfo.storeaddr}}
+    </span>
+    <ion-note item-right class="folowed" *ngIf="followed"><img src="assets/img/icon_yiguanzhu@2x.png" alt="*" class="img-folowed" />已关注</ion-note>
+    <ion-note item-right class="folowed" *ngIf="!followed">
+      <button ion-button clear item-right class="follow" (tap)="toFollow()">+关注</button>
+    </ion-note>
+    <div></div>
+  </ion-item>
+  <div class="item-times">
+    <span class="sp-times">
+      <img src="assets/img/icon_yingyeshijian@2x.png" alt="*" />
+      <i>{{shopInfo.opentime}}{{shopInfo.closetime}}</i>
+    </span>
+
+    <span class="sp-call" *ngIf='call_mendian'>
+      <img src="assets/img/icon_shangpudianhua@2x.png" alt="*"/>
+      <a [href]="tel_str" id="a_tel"></a>
+    </span>   
+
+  </div>
+  <div class="my-hr"></div>
+
+  <ion-toolbar class="shop-toolbar" [hidden]='tho'>
+    <span start class="left_span">门店优惠</span>
+  </ion-toolbar>
+
+  <ion-list class="list-no-margin" >
+    <ion-item class="list_margin_item">
+      <p class="sale-header fxlist">分享赠送  <span class="zensong">分享赠送100元代金券</span> <span class="zensong" *ngIf='fenxiang2'>{{fenxiangzengnsong.voicetimes+'分钟通话'}}</span> <span class="zensong" *ngIf='fenxiang3'>{{fenxiangzengnsong.fluxPackage.ydfluxkbs+'M流量'}}</span></p>
+      <p class="item-right-font validday">好友通过分享链接成为会员即可获得赠送</p>
+      <p class="item-right-font validday">长期有效 </p>
+      
+    </ion-item>
+  </ion-list>
+  <ion-list class="list-no-margin" [hidden]='tho' *ngFor="let item of yhPrivilegelist">
+   
+    <ion-item class="list_margin_item" *ngIf='item.youxiaoriqi'>
+      <p class="sale-header">{{item.quantitle}}</p>
+      <p class="item-right-font validday">{{item.validday}}</p>
+      <span class="hov" (click)="Preferential(shopInfo,item)" *ngIf='item.kaishi'>获取优惠</span>
+      <span class="hov weikaishi" (click)="Preferential(shopInfo,item)" *ngIf='item.weikaishi'>查看详情</span>
+    </ion-item>
+  </ion-list>
+ <ion-icon class="genduoyouhui" ios="md-arrow-dropdown" md="md-arrow-dropdown" (click)="huoqugenduo()" *ngIf='cang'></ion-icon> -->
+
+
+
+  
+
+  <ion-toolbar class="shop-toolbar">
+    <span start class="left_span">爆款商品</span>
+  </ion-toolbar>
+  
+  <ion-list>
+    <ion-item class="goods-item" *ngFor="let item of goods_list" (click)='detail(item,yhPrivilege,shopInfo)'>
+      <img [src]='goodsface_900+item.goodsface' [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"
+      />
+      <div class="goods-header">{{item.goodsname}}</div>
+      <div class="goods-description">{{item.goodsdesc}}</div>
+      <!--<div class="goods-sale">优惠:买三送一</div>-->
+      <div class="goods-cost">
+        <span class="new-cost">{{'￥ '+item.sellprice}}</span>
+        <span class="old-cost" *ngIf="!item.pric">{{'￥'+item.marketprice}}</span>
+      </div>
+      <!-- <div (click)='maimaimai(item)'>买买买</div> -->
+    </ion-item>
+    <div (click)='getAllGoods()' class="more-goods" *ngIf='moreShop'>查看更多商品</div>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

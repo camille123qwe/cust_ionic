@@ -1,0 +1,57 @@
+page-find {
+    .label-ios{
+        margin: 0;
+        
+    }
+    .find_bar{
+        min-height: 52px !important;
+    }
+    .center-myInput{
+        margin-top: 3px;
+    }
+    .back-button{
+    display: none !important ;
+}
+    .item-address{
+           white-space: normal;
+           margin-top: 5px;
+           position: relative;
+           width: 136px;
+           height: 33px;
+           font-size: 12px;
+           display: block;
+           color: #888;
+            
+    }.item-header{
+       font-size: 13px;
+       
+    }.item-inner{
+        border: 0 !important; 
+
+    }.item {
+        border-bottom: 1px solid #c8c7cc;
+        padding-left: 5px;
+        
+    }.item-right{
+        position: absolute;
+        right: 5px;
+        top: 78px; 
+        font-size: 13px;
+        color: #888;
+        
+    }.price{
+        height: 16px;
+        margin-top: 6px;
+        
+    }.prices{
+        font-size: 12px;
+        color: #888;
+        float: left;
+        
+    }.pricec{
+        font-size: 12px;
+        color: #888;
+        float: right;
+        
+    }
+}

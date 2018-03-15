@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>轻松游戏</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="game-title">
+    <ion-row class="top-game">
+
+      <ion-col (tap)="startGame(left)" class="top_1" [hidden]="bam">
+        <div>
+          <div class="top-content">
+            <img [src]="left.gameimg" class="game-img">
+            <p>{{left.gamename}}</p>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col (tap)="startGame(middle)" class="top_2" [hidden]="bam">
+        <div class="top-content">
+          <img [src]="middle.gameimg" class="game-img">
+          <p>{{middle.gamename}}</p>
+        </div>
+      </ion-col>
+      <ion-col (tap)="startGame(right)" class="top_3" [hidden]="bam">
+        <div class="top-content">
+          <img [src]="right.gameimg" class="game-img">
+          <p>{{right.gamename}}</p>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </div>
+  <ion-toolbar class="park_toolbar" [hidden]="str">
+    <span start class="toolbar-title">新游推荐</span>
+  </ion-toolbar>
+
+  <ion-list [hidden]="str">
+    <ion-item class="item" *ngFor="let item of new_list">
+      <img [src]='item.gameimg' class="game-img" item-left />
+      <div class="game-header">{{item.gamename}}</div>
+      <div class="game-description">{{item.gamedesc}}</div>
+      <button ion-button clear item-right class="start" (click)="startGame(item)" >开始</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-toolbar class="park_toolbar" [hidden]="hotgame">
+    <span start class="toolbar-title">热门游戏 </span>
+  </ion-toolbar>
+  <ion-list [hidden]="hotgame">
+    <ion-item class="item" *ngFor="let item of hot_list">
+      <img [src]='item.gameimg' class="game-img" item-left/>
+      <div class="game-header">{{item.gamename}}</div>
+      <div class="game-description">{{item.gamedesc}}</div>
+      <button clear ion-button item-right class="start" (click)="startGame(item)">开始</button>
+    </ion-item>
+  </ion-list>
+  
+ <!-- <ion-toolbar class="qidai-title">-->
+	  <span class="qidai" [hidden]="qidai">
+	           敬请期待! 
+	  </span>
+  <!--</ion-toolbar>-->
+  
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

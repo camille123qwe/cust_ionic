@@ -1,0 +1,97 @@
+page-contact {
+	.item-md{padding-right: 40px}
+// ion-searchbar{
+// 	position: fixed;
+// 	top: 46px;
+// }
+.contacts-list{
+	position: absolute;
+    top: 50px;
+    width: 100%;
+}
+}
+    .contact-list{
+    border-width: 0px;
+    background-color: #fff;
+    color: #444;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    /* padding: 16px 0px; */
+    font-size: 16px;
+    }
+		
+    .contact-list div.label{
+        padding: 8px 16px;
+        background: #F5F5F5;
+    }
+
+    .contact-list-item{
+            border-color: #ddd;
+    background-color: #fff;
+    color: #444;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    padding: 16px;
+    border-width: 1px;
+    border-style: solid none;
+    font-size: 16px;
+    }
+
+    .contact-name{
+        
+        padding-top: 26px;
+        padding-bottom: 0px;
+    }
+	.citybox-shortcuts {
+		position: fixed;
+		top: 130px;
+		right: 0;
+		bottom: 0px;
+		width: 30px;
+		font-size: 11px;
+		// display: -webkit-box;
+		// display: box;
+		// -webkit-box-direction: normal;
+		// -webkit-box-orient: vertical;
+		// -webkit-flex-direction: inherit;
+		// -moz-flex-direction: vertical;
+		// -ms-flex-direction: inherit;
+		// flex-direction: inherit;
+		// -webkit-box-pack: center;
+		// -ms-flex-pack: center;
+		// -webkit-justify-content: center;
+		// -moz-justify-content: center;
+		// justify-content: center;
+		// -webkit-transform: translate3d(0, 0, 0);
+		// transform: translate3d(0, 0, 0);
+        z-index: 100;
+	}
+	.citybox-shortcuts p{
+        
+        margin:5px;
+    }
+	.citybox-shortcuts a {
+		text-align: center;
+		color: #A2A2A2;
+		// -webkit-box-flex: 1;
+		// box-flex: 1;
+		// display: -webkit-box;
+		// display: -webkit-flex;
+		// display: flex;
+		// -webkit-box-pack: center;
+		// -ms-justify-content: center;
+		// -webkit-justify-content: center;
+		// justify-content: center;
+		// -webkit-box-align: center;
+		// -ms-align-items: center;
+		// -webkit-align-items: center;
+		// align-items: center;
+        
+	}
+	.contacts-group ion-label{
+		margin:0px;
+	}

@@ -1,0 +1,36 @@
+<!--
+  Generated template for the PreferentialModule page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+
+  <ion-navbar>
+    <ion-title>PreferentialModule</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+  
+<ion-content class="xqcont" (tap)="presentProfileModal($event)">
+ <div class="model">
+   <p class="Guide">请将此二维码出示给商家</p>
+    <p class="erweima" *ngIf='weikai'><img [src] ="preferential_qrcode"/></p>
+    <p class="erweima" *ngIf='huodong'><span class='huodong'>活动还未开始<br>敬请期待！</span></p>
+     <p class="shengyu" *ngIf='shengyuquan'>{{'剩余'+(youhui.maxcount-youhui.usedcount)+'张'}}</p>
+     <hr>
+    <p class="shopTit">{{storeName.storename}}</p>
+    <p class="moneyneed">{{'满'+youhui.costmoneyneed/100+'可使用'}}</p>
+    <div class="article1">
+      <p class="article" *ngIf="!youhuiquan">{{youhui.cashvalue/100+'元优惠券'}}</p>
+      <p class="article" *ngIf="!tonghua">{{youhui.voicetimes/60+'分钟免费通话'}}</p>
+    </div>
+    <div class="article1">
+      <p class="article" *ngIf="!liuliang">{{youhui.fluxPackage.ydfluxkbs/1024+'M流量'}}</p>
+      <p class="article" *ngIf="!liwu">{{youhui.giftname}}</p>
+    </div>  
+    
+  </div>
+</ion-content>
+

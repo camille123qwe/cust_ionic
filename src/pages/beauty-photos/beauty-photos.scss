@@ -1,0 +1,43 @@
+page-beauty-photos {
+ .legs{
+     width: 100%;
+     
+ }
+ .legs_list{
+     width: 100%;
+ }
+ .legs-l{
+     padding-left: 4px;
+     float: left;
+     width: 50%;
+     
+ }
+ .legs-r{
+     padding-right: 4px;
+     float: right;  
+     width: 50%;
+     
+ }.pure-l{
+     float: left;
+     width: 50%;
+     
+ }.pure-r{
+     float: right;
+     width: 50%;
+     
+ }
+ 
+    .beauty-img{
+        padding: 4px;
+        width: 100%;
+       
+    }
+    .col{
+        padding: 0;
+    }
+    // ion-col{
+    //     float:right; 
+	//     width: 50%;
+    //     padding: 3px;
+    // }
+}

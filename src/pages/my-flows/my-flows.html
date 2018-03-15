@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>流量赠送明细</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of myFlow">
+
+      <h2 class="item-header">{{item.costtitle}}</h2>
+      <p class="item-time">{{item.createtime}}</p>
+
+      
+      <ion-note item-right>
+      <img src="assets/img/icon_jifen@2x.png" alt="*" class="item-img" />
+        <div class="item-flows">{{item.fluxkbs}}</div>
+        <div class="item-from">{{item.costreason}}</div>
+      </ion-note>
+    </ion-item>
+    <div class="Ltishi" [hidden]='ros'>暂无数据!</div>
+    <!--<ion-item>
+
+      <h2 class="item-header">八马茶业</h2>
+      <p class="item-time">2017-01-11 15:15</p>
+
+      <img src="assets/img/icon_jifen@2x.png" alt="*" class="item-img" />
+      <ion-note item-right>
+        <div class="item-flows">+100M</div>
+        <div class="item-from">购物获得</div>
+      </ion-note>
+    </ion-item>-->
+  </ion-list>
+</ion-content>

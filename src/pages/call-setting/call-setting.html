@@ -1,0 +1,36 @@
+<ion-header>
+	
+  <ion-navbar>
+  	<button ion-button icon-only menuToggle (tap)="fanhui()" >
+  	 <ion-icon ios="ios-arrow-back" md="ios-arrow-back"  class="orange"></ion-icon>
+  	</button>
+    <ion-title>拨打方式</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list radio-group [(ngModel)]="call_type">
+    <ion-item>
+      <ion-label>默认回拨
+        <p class="hint">通话稳定，不消耗流量，适合所有网络环境</p>
+      </ion-label>
+      <ion-radio  value="call_back"></ion-radio>
+    </ion-item>
+
+    <!--<ion-item>
+      <ion-label>默认直拨
+        <p class="hint">直播请在稳定的网络环境下拨打</p>
+      </ion-label>
+      <ion-radio value="call_direct"></ion-radio>
+    </ion-item>-->
+
+    <!--<ion-item>
+      <ion-label>智能拨打
+        <p class="hint">WIFI下自动直拨，非WIFI下回拨</p>
+      </ion-label>
+      <ion-radio value="call_smart"></ion-radio>
+    </ion-item>-->
+  </ion-list>
+</ion-content>

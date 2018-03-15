@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <!--<img src="assets/img/icon_fanhui.png" (tap)="close()" class="img-header" start/>-->
+
+    <button ion-button icon-only menuToggle (tap)="close()">
+       <ion-icon ios="ios-arrow-back" md="ios-arrow-back"  class="orange"></ion-icon>
+      
+       </button>
+
+    <ion-title>通话</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="setting_page()">
+        <!--<ion-icon src ="assets/img/icon_shezhi.png"></ion-icon>-->
+        <img src ="assets/img/icon_shezhi.png" class="img-header"/>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="line"></div>
+  <!--<ion-toolbar  *ngIf="contactShow" >
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="姓名首字母组合、数字搜索" autocomplete="on" mode='ios' color='orange' showCancelButton='true'
+      cancelButtonText="取消" (ionCancel)="onCancelSearch($event)">
+
+    </ion-searchbar>
+  </ion-toolbar>-->
+
+</ion-header>
+
+<ion-content>
+  <page-call *ngIf="!contactShow" #callpage></page-call>
+  <page-contact *ngIf="contactShow"></page-contact>
+</ion-content>
+<page-keyboard *ngIf="isKeyboardShow"></page-keyboard>
+
+<ion-footer class="footer-call-madal tabbar show-tabbar">
+
+  <!--<button ion-button (tap)="presentPopover($event)" id="btn-keyboard"></button>-->
+  <ion-grid class="grid-call-modal">
+    <ion-row center>
+      <ion-col width-25 (tap)="goCallPage($event)">
+        <img [src]="footer_keyboard" class="img-footer" />
+        <p class="claa_bto"> 拨号</p>
+      </ion-col>
+      <ion-col width-50>
+        <button ion-button clear (tap)="calling()" [ngClass]="calling_class">呼叫</button>
+      </ion-col>
+      <ion-col width-25 (tap)="goContactsPage()">
+        <img [src]="footer_contact" class="img-footer" />
+        <p class="claa_bto">通讯录</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

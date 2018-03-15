@@ -1,0 +1,48 @@
+page-keyboard {
+    // height: 500px;
+    // position:fixed;
+    // bottom:44px;
+    z-index: 1000;
+    position: absolute;
+    bottom:52px !important;
+    background-color: #ffffff;
+    width: 100%; 
+}
+.keyboard-list-item{
+    
+    
+}
+
+.popover-content{
+    
+}
+.keyboard-grid{
+    // height: 500px;
+    padding:0px;
+}
+.keyboard-grid ion-col{
+    text-align: center;
+    // height: 58px;
+    border-bottom: 1px solid #c9c9c9;
+    border-right: 1px solid #c9c9c9;    
+    padding-top:14px;
+    font-size: 43px;
+    color: #5e616d;
+}
+.img-delete{
+    width: 33px;
+}
+.call-phonenumber{
+    height: 46px;
+    border: 1px solid #c9c9c9; 
+    // padding-top:10px;
+    // padding-bottom:10px;
+    text-align: center;
+    
+}
+.call-phonenumber span{
+    width: 80%;
+    font-size: 34px;
+    color:#fb6d07;
+}
+

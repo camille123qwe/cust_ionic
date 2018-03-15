@@ -1,0 +1,121 @@
+page-card-setting {
+    .myCard{
+        margin: 0;
+        padding: 0;
+        padding-top: 1px !important;
+        background:#efeff4; 
+        height: 288px;
+        width: 100%;
+    }
+    .cardTop{
+        width: 93%;
+        height: 73%;
+        margin:0 auto;
+        border-radius: 5px;
+        margin-top:37px; 
+        background: url(../assets/img/yhkbd_kp@2x.png)no-repeat center center;
+        background-size: 100% 100%;
+        padding-top: 0.5px;
+    }
+    .chne{
+        height: 130px;
+        position: relative;
+    }
+    .conscard{
+        position: absolute;
+        top: 20%;
+        left: 3%;
+        width: 77px;
+        height: 77px;
+        background: #fff;
+        border-radius: 50%;
+       text-align: center;
+    }
+    .conscard img{
+         width: 80%;
+         margin-top: 9px;
+    }
+    .cardp{
+        float: right;
+        margin-top: 28px;
+            margin-right: 2% !important;
+    }
+
+   .cardp span{
+    font-size: 14px;
+    margin-right: 6px;
+    color: #fff;
+    display: block;
+    text-align: right;
+   }  
+   .redcard{
+       color: #fedcc4 !important;
+       font-size: 15px !important;
+       margin-top: 25px !important;
+       letter-spacing: 2px;
+   }
+   .Tenhnology{
+       padding-right: 3px;
+       color: #fedcc4 !important;
+       font-size: 7px !important;
+   }
+   .chnes{
+       width: 100%;
+       
+       padding-top: 1px;
+   }
+   .chnes p{
+       margin: 0;
+       padding: 0;
+    //    margin-top: 13px !important;
+    //    text-align: center;
+   }
+   .chnes p span{
+       display:block;
+       margin-left: 20px;
+   }
+   .span_t{
+       color: #333;
+    //    margin-left: 5px !important ;
+   }
+  
+    .span_b{
+        // margin-top: 13px !important;
+        margin-right: 10px !important;
+        float: right;
+        color: #666;
+        font-size: 10px !important;
+   }
+   .btns{
+       margin-top: 49px;
+       text-align: center;
+   }
+    button{
+       
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    .btn_o{
+         padding: 16px 44px;
+        background: #fb6d07;
+        color: #fff;
+        margin-right: 12px;
+    }
+    .btn_t{
+         padding: 14px 42px;
+        background: #fff;
+        color: #fb6d07;
+        border:2px solid #fb6d07;
+        margin-left: 12px;
+    }
+    .ion-ios-arrow-back:before{
+        display: none !important;
+    }
+    .button-inner{
+            display: none !important;
+    }
+    .bar-button::after{
+       display: none !important;  
+    }
+   
+}

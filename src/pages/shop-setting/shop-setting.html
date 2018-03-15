@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item class="single-item">
+    <ion-label>允许短信推送
+      <p class="hint">允许本门店发送营销短信</p>
+    </ion-label>
+     <ion-toggle [(ngModel)]="openPush" color="light_green"></ion-toggle>
+  </ion-item>
+  <div class="my-hr"></div>
+
+</ion-content>

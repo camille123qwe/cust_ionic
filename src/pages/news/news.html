@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>新闻头条</ion-title>
+  </ion-navbar>
+  <div class="my-hr"></div>
+  <ion-toolbar >
+    <ion-row class="news-type">
+      <ion-col (click)="selectNews(item)" [ngClass]="item.tab_class" *ngFor="let item of title_row1">{{item.name}}</ion-col>
+    </ion-row>
+    <div class="my-hr"></div>
+    <ion-row class="news-type">
+      <ion-col (click)="selectNews(item)" [ngClass]="item.tab_class" *ngFor="let item of title_row2">{{item.name}}</ion-col>
+    </ion-row>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let item of news_list" class="park_list_item" (click)='goNewsDetails(item.newsurl)'>
+      <!--<ion-thumbnail item-left>-->
+      <!--<img [src]="item.img" [height]="park_list_img_height" [width]="park_list_img_width"/>-->
+      <img [src]="item.img" [ngClass]="small_img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+
+      <p class="news-header">{{item.header}}</p>
+      <p class="news-time">
+        <span>{{item.content}}</span>&nbsp;
+        <span>{{item.time}}</span>
+      </p>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

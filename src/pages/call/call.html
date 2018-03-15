@@ -1,0 +1,29 @@
+<ion-toolbar class="call-toolbar">
+  <span class="login" *ngIf="!isLogin" (tap)='login()'>点击登录</span>  
+  <span class="time" *ngIf="isLogin" >可用通话时长：</span>
+  <span class="time-value" *ngIf="isLogin">{{usable_min+"分钟"}}</span>
+</ion-toolbar>
+
+<ion-list id="records_list">
+
+
+  <ion-item (click)="calling(item)" *ngFor="let item of allRecords">
+    <img src="assets/img/icon_dianhua.png" item-left alt="*" class="call-modal-img" />
+    <h2 class="call-phone-number">{{item.phoneNumber}}</h2>
+    <p class="call-name">{{item.displayName}}</p>
+    <div item-right class="call-time">
+      <p>{{item.callDate}}</p>
+      <!--<ion-note >{{item.callDate}}</ion-note>-->
+      <p>{{item.callTime}}</p> 
+
+    </div>
+
+  </ion-item>
+</ion-list>
+
+
+
+<!--<ion-footer>
+  <button ion-button (click)="presentPopover($event)" id="btn-keyboard">
+    </button>
+</ion-footer>-->

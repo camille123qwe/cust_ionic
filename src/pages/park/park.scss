@@ -1,0 +1,80 @@
+page-park {
+  .grid-bg-bar{
+    background-color: #efeff4;
+    height: 10px;
+    width: 100%;
+  }
+  .sp_more{
+      font-size: 14px;
+     
+  }
+  .ion-ios-arrow-forward{
+      font-size:1.2em ;
+       color: #c8c8c8;
+  }
+  p{
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; 
+}
+.pard_list{
+  // padding: 5px;
+  // margin: 0;
+  display: fixed;
+  flex-wrap: wrap;
+}
+p.news-header{
+    font-size: 14px;
+    color: #333333;
+    height: 48px;
+    word-wrap: break-word !important; 
+    word-break: break-all !important; 
+    // word-break:break-all;
+    padding-top: 12px;
+    
+}
+p.news-time{
+  margin-top:10px !important;
+}
+
+}
+#park_title_img{
+    width: 100%;
+    height: 169 px;
+}
+.park_col{
+  text-align: center;
+  padding: 0;
+}
+.park_col p{
+  font-size: 13px;
+  margin-top:5px; 
+}
+.park_col img{
+  width:45px;
+}
+.park_toolbar .toolbar-background{
+  border-bottom: 1px solid #c9c9c9 ;
+  color: #666666;
+  background-color: #ffffff;
+
+}
+.park_toolbar {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  min-height: 52px;
+}
+    // .toolbar-title{
+    //     font-size: 17px;
+    //     color:#666666;
+    // }
+.park_list_item ion-label{
+  white-space: normal;
+  // white-space:nowrap; 
+// word-break:keep-all; 
+// overflow:hidden; 
+// text-overflow:ellipsis;
+}

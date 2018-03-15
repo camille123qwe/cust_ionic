@@ -1,0 +1,76 @@
+<ion-content>
+  <img [src]="park_title_banner" id="park_title_img" (tap)="goPointsMall()">
+
+  <ion-grid class="park-grid" *ngIf="!rowShow">
+    <ion-row>
+      
+
+        <!--<ion-col  *ngFor="let item of pard_grids" class="park_col" (tap)="goNextPage(item.id)">
+          <div class="pard_list" *ngIf="!item.isShow">
+              <img [src]="item.img">
+              <div>{{item.txt}}</div>   
+          </div>
+        </ion-col>-->
+
+       <ion-col   class="park_col" (tap)="goNextPage(this.pard_grids[0].id)" *ngIf="!this.pard_grids[0].isShow">
+          <div class="pard_list">
+              <img [src]="this.pard_grids[0].img">
+              <div>{{this.pard_grids[0].txt}}</div>   
+          </div>
+        </ion-col>
+
+        <ion-col   class="park_col" (tap)="goNextPage(this.pard_grids[1].id)" *ngIf="!this.pard_grids[1].isShow">
+          <div class="pard_list">
+              <img [src]="this.pard_grids[1].img">
+              <div>{{this.pard_grids[1].txt}}</div>   
+          </div>
+        </ion-col>
+
+        <ion-col   class="park_col" (tap)="goNextPage(this.pard_grids[2].id)" *ngIf="!this.pard_grids[2].isShow">
+          <div class="pard_list">
+              <img [src]="this.pard_grids[2].img">
+              <div>{{this.pard_grids[2].txt}}</div>   
+          </div>
+        </ion-col>
+
+        <ion-col   class="park_col" (tap)="goNextPage(this.pard_grids[3].id)" *ngIf="!this.pard_grids[3].isShow">
+          <div class="pard_list">
+              <img [src]="this.pard_grids[3].img">
+              <div>{{this.pard_grids[3].txt}}</div>   
+          </div>
+        </ion-col>
+      
+
+    </ion-row>
+  </ion-grid>
+  <div class="grid-bg-bar" *ngIf="!rowShow"></div>
+
+  <ion-toolbar class="park_toolbar" >
+    <span start class="toolbar-title">新闻头条</span>
+    <ion-buttons end>
+      <button ion-button color="gray" icon-right (tap)="goNewsPage()">
+                <span class="sp_more">
+                	更多
+                </span>
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+    </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+
+  <ion-list>
+    <ion-item *ngFor="let item of park_list" class="park_list_item" (tap)='goNewsDetails(item.newsurl)'>
+      <!--<ion-thumbnail item-left>-->
+      <!--<img [src]="item.img" [height]="park_list_img_height" [width]="park_list_img_width"/>-->
+      <img [src]="item.img" [ngClass]="small_img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+
+      <p class="news-header">{{item.header}}</p>
+      <p class="news-time">
+        <span>{{item.content}}</span>&nbsp;
+        <span>{{item.time}}</span>
+      </p>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

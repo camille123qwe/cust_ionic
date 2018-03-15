@@ -1,0 +1,162 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>积分商城</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <img [src]="points_mall_title_img" id="points_mall_title_img">
+  <ion-toolbar class="park_toolbar">
+    <span start>兑换流量</span>
+  </ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col (click)="selectedChinaTelecom()" [ngClass]="tab1_class">中国电信</ion-col>
+      <ion-col (click)="selectedChinaUnicom()" [ngClass]="tab2_class">中国联通</ion-col>
+      <ion-col (click)="selectedChinaMobile()" [ngClass]="tab3_class">中国移动</ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--<hr/>-->
+
+
+  <div [ngSwitch]="points_type">
+    <!--电信-->
+    <div *ngSwitchCase="'china_telecom'">
+      <ion-grid>
+        <ion-row center *ngFor="let item of telecomRaw">
+          <ion-col width-50 (click)="pointsExchange(telecomList[2*item].experthing36id)" class="card-col">
+            <div class="points-card">
+              <p class="card-title">{{telecomList[2*item].title}}</p>
+              <p class="card-description">{{telecomList[2*item].subtitle}}</p>
+              <p class="card-price">{{telecomList[2*item].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+          <ion-col width-50 (click)="pointsExchange(telecomList[2*item+1].experthing36id)" class="card-col">
+            <div class="points-card">
+              <p class="card-title">{{telecomList[2*item+1].title}}</p>
+              <p class="card-description">{{telecomList[2*item+1].subtitle}}</p>
+              <p class="card-price">{{telecomList[2*item+1].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row center >
+          <ion-col width-50 (click)="pointsExchange(telecomList[telecomLast].experthing36id)" class="card-col" *ngIf="lastTelecomShow">
+            <div class="points-card">
+              <p class="card-title">{{telecomList[telecomLast].title}}</p>
+              <p class="card-description">{{telecomList[telecomLast].subtitle}}</p>
+              <p class="card-price">{{telecomList[telecomLast].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </div>
+    <!--联通-->
+    <div *ngSwitchCase="'china_unicom'">
+      <ion-grid>
+        <ion-row center *ngFor="let item of Unicom.unicomRaw">
+          <ion-col width-50 (click)="pointsExchange(Unicom.unicomList[2*item].experthing36id)" class="card-col">
+            <div class="points-card">
+              <p class="card-title">{{Unicom.unicomList[2*item].title}}</p>
+              <p class="card-description">{{Unicom.unicomList[2*item].subtitle}}</p>
+              <p class="card-price">{{Unicom.unicomList[2*item].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+          <ion-col width-50 (click)="pointsExchange(Unicom.unicomList[2*item+1].experthing36id)" class="card-col">
+            <div class="points-card">
+              <p class="card-title">{{Unicom.unicomList[2*item+1].title}}</p>
+              <p class="card-description">{{Unicom.unicomList[2*item+1].subtitle}}</p>
+              <p class="card-price">{{Unicom.unicomList[2*item+1].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row center >
+          <ion-col width-50 (click)="pointsExchange(Unicom.unicomList[Unicom.unicomLast].experthing36id)" class="card-col" *ngIf="Unicom.lastUnicomShow">
+            <div class="points-card">
+              <p class="card-title">{{Unicom.unicomList[Unicom.unicomLast].title}}</p>
+              <p class="card-description">{{Unicom.unicomList[Unicom.unicomLast].subtitle}}</p>
+              <p class="card-price">{{Unicom.unicomList[Unicom.unicomLast].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </div>
+    <!--移动-->
+    <div *ngSwitchCase="'china_mobile'" >
+      <ion-grid>
+        <ion-row center *ngFor="let item of Mobile.mobileRaw">
+          <ion-col width-50 (click)="pointsExchange(Mobile.mobileList[2*item].experthing36id)" class="card-col">
+            <div class="points-card">
+              <p class="card-title">{{Mobile.mobileList[2*item].title}}</p>
+              <p class="card-description">{{Mobile.mobileList[2*item].subtitle}}</p>
+              <p class="card-price">{{Mobile.mobileList[2*item].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+          <ion-col width-50 (click)="pointsExchange(Mobile.mobileList[2*item+1].experthing36id)" class="card-col">
+            <div class="points-card">
+              <p class="card-title">{{Mobile.mobileList[2*item+1].title}}</p>
+              <p class="card-description">{{Mobile.mobileList[2*item+1].subtitle}}</p>
+              <p class="card-price">{{Mobile.mobileList[2*item+1].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row center >
+          <ion-col width-50 (click)="pointsExchange(Mobile.mobileList[Mobile.mobileLast].experthing36id)" class="card-col" *ngIf="Mobile.lastMobileShow">
+            <div class="points-card">
+              <p class="card-title">{{Mobile.mobileList[Mobile.mobileLast].title}}</p>
+              <p class="card-description">{{Mobile.mobileList[Mobile.mobileLast].subtitle}}</p>
+              <p class="card-price">{{Mobile.mobileList[Mobile.mobileLast].sellexper + "积分"}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </div>
+  </div>
+
+  <!--话费-->
+  <ion-toolbar class="park_toolbar">
+    <span start>兑换语音</span>
+  </ion-toolbar>
+  <!--<hr/>-->
+    <ion-grid>
+      <ion-row center *ngFor="let item of Voice.raw">
+        <ion-col width-50 (click)="pointsExchange(Voice.list[2*item].experthing36id)" class="card-col">
+          <div class="points-voice-card">
+            <p class="card-title">{{Voice.list[2*item].title}}</p>
+            <p class="card-description">{{Voice.list[2*item].subtitle}}</p>
+            <p class="card-price">{{Voice.list[2*item].sellexper + "积分"}}</p>
+          </div>
+        </ion-col>
+        <ion-col width-50 (click)="pointsExchange(Voice.list[2*item+1].experthing36id)" class="card-col">
+          <div class="points-voice-card ">
+            <p class="card-title">{{Voice.list[2*item+1].title}}</p>
+            <p class="card-description">{{Voice.list[2*item+1].subtitle}}</p>
+            <p class="card-price">{{Voice.list[2*item+1].sellexper + "积分"}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row center >
+        <ion-col width-50 (click)="pointsExchange(Voice.list[Voice.last].experthing36id)" class="card-col" *ngIf="Voice.show">
+          <div class="points-voice-card">
+            <p class="card-title">{{Voice.list[Voice.last].title}}</p>
+            <p class="card-description">{{Voice.list[Voice.last].subtitle}}</p>
+            <p class="card-price">{{Voice.list[Voice.last].sellexper + "积分"}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+</ion-content>

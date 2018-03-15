@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      积分兑换
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="points-exchange-content">
+<!--<img src="assets/icon/lake.jpg" id="points-title-img" >-->
+<div class="points_exchange_title">
+  <p>{{"可用积分:"+left_points}}</p>
+</div>
+<div class="menu_info">
+  <div >{{"套餐名称："+menu_name}}</div>
+  <div class="menu_cost">所需积分：<span class="price">{{cost_points}}</span></div>
+</div>
+<div class="my-hr"></div>
+<div class="menu_des">
+  <p >套餐说明：</p>
+  <div class="menu_des_detail">
+    <p>1、流量月底清零</p>
+    <p>2、请谨慎保存设备，目前遗失无法补办</p>
+    <p>3、流量以自然月为单位，月底最后一天清零，建议月初激活使用</p>
+    <p>4、充值或查询时请确保您处于较佳的网络环境，若无提示，请联系客服或直接回复本号</p>
+    
+  </div>
+</div>
+  <div class="login">
+    <button ion-button block (click)="onExchange()" clear>确认兑换</button>
+  </div>
+</ion-content>

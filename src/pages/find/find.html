@@ -1,0 +1,39 @@
+<ion-header align-title="center">
+  <ion-navbar mode="ios" class="find_bar">
+    <ion-buttons start>
+      <!--<button ion-button icon-right [navPush]="city_page" color="orange">{{city}}
+        <ion-icon name="ios-arrow-down" class="header-icon" color="orange"></ion-icon>
+      </button>-->
+      <button ion-button icon-right >{{city}}</button>
+    </ion-buttons>
+
+    <!--<ion-searchbar [(ngModel)]="myInput" placeholder="搜索门店" (ionFocus)="onSearchInput($event)" color="orange" mode='ios'></ion-searchbar>-->
+    <div class="center-myInput" >
+    	<img (tap)="onSearchInput($event)" [src] ="shousuo_img"/>    
+    </div>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="obserAnotationClick(arround_shops)">
+        <ion-icon name="ios-pin-outline" color="orange"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item class="item" *ngFor="let item of arround_shops" (click)="getShopDetails(item)" >
+      <img [src]="storefaceurl_300+item.storeface" [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+      <div class="item-header">{{item.storename}}</div>
+      <div class="price"><span class="prices" [hidden]="val">商品数:{{item.goodscount}}</span><span class="pricec" [hidden]="Val">消费{{item.buycount}}次</span></div>
+      <div class="item-address">{{item.storeaddr}}</div>
+      <!--<div class="item-next">进去看看</div>-->
+    
+      <!--<div class="item-custom">{{item.custusercount}}</div>-->
+      <div class="item-right">{{item.distance}}</div>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

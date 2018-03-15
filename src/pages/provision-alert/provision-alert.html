@@ -1,0 +1,14 @@
+<ion-content class="content" (tap)="present($event)">
+  <ion-scroll scrollY="true" #scroll>
+    <ion-list no-lines class="good-list">
+      <div class='select'>
+        <ul>
+          <li *ngFor='let item of store' (click)='giveData(item)'>
+            <span>{{item.storename}}</span>
+            <i>{{item.distance}}</i>
+          </li>
+        </ul>
+      </div>
+    </ion-list>
+  </ion-scroll>
+</ion-content>

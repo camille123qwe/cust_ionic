@@ -1,0 +1,16 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>意见反馈</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content">
+  <textarea class="text-suggestion" placeholder="请提出你们的宝贵意见" #suggestion></textarea>
+    <div class="login">
+    <button ion-button block clear (click)="submmit(suggestion.value,userid)">提交</button>
+  </div>
+</ion-content>

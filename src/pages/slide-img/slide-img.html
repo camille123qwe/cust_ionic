@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar hide-back-button="true">
+    <!-- <ion-buttons start>
+      <button ion-button (click)='dismiss()' class="back">      
+      <ion-icon ios="ios-arrow-back-outline" color='blue'></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <ion-title>{{title}}</ion-title>
+
+    <!-- <ion-buttons end>
+      <button ion-button (click)='deletePicture()' class="delete">
+      <ion-icon ios="ios-trash-outline" color='gray'></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content>
+
+  <ion-slides initialSlide={{IMG_index}} (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let item of IMGs">
+
+      <!--<img [src]='item.bigimg' (press)='saveImg(showImgUrl,imgUrl,imgId)'>-->
+      <img [src]='item'>
+
+      <!--  长按图片保存的方法-->
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>

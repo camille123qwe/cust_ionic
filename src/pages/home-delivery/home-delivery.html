@@ -1,0 +1,48 @@
+<!--
+  Generated template for the HomeDeliveryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>三公里免费送上门</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content">
+  <div class="center-myInput">
+    <img (tap)="search($event)" [src]="shousuo_img" />
+  </div>
+  <div class="banner-img">
+    <img [src]="banner" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';" />
+  </div>
+
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-3 class="menus">
+        <ion-scroll scrollY="true" style="height:100%">
+          <ion-list no-lines>
+            <ion-item (click)='menu(c)' button class="menuItem" *ngFor="let c of categories;let i=index" [ngClass]="{'active': i==0}" text-center (click)="itemClick(c,$event)">
+              {{c}} </ion-item>
+          </ion-list>
+        </ion-scroll>
+      </ion-col>
+
+      <ion-col class="items">
+        <ion-scroll scrollY="true" #scroll style="height:100%">
+          <ion-item class="item" *ngFor="let item of guessLikeShops" (tap)="getShopDetails(item)">
+            <img [src]="toreface" class="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';" />
+            <div class="item-header">军坤24小时便利店</div>
+            <div class="item-address">20元起 1公里免费送 <span class="distance">0.7公里</span></div>
+             <hr id="item-hr">
+            <div class="item-discounts">满100送30M流量 <span class="item-right">4个优惠</span></div>
+          </ion-item>
+        </ion-scroll>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

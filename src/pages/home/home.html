@@ -1,0 +1,238 @@
+<ion-header align-title="center">
+  <ion-navbar color="orange" mode="ios" class="home-navbar">
+    <ion-buttons start>
+      <button ion-button icon-right color="white">{{select_city}}</button>
+    </ion-buttons>
+    <div class="center-myInput">
+      <img (tap)="onSearchInput($event)" [src]="shousuo_img" />
+    </div>
+
+    <!--<ion-buttons end>
+      <button ion-button icon-only (tap)="obserAnotationClick(maparen,context)" color="white">
+        <ion-icon name="ios-pin-outline"></ion-icon>
+      </button>
+    </ion-buttons>-->
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="baycar()">
+        <!--[navPush]="addmendian" -->
+        <img [src]="shopcar" class="img-header" />
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="myContent">
+  <!--<ion-grid class="home-grid">
+    <ion-row>
+      <ion-col class="park_col" (tap)="goNextPage(item.id)" *ngFor="let item of grid">
+        <img [src]="item.img">
+        <p>{{item.txt}}</p>
+      </ion-col>
+             
+    </ion-row>
+  </ion-grid>-->
+
+  <!--<ion-row class="news-bar" (tap)="goNewsDetails()">
+    <ion-col width-20 class="left-title">
+      <div>
+        <p><strong>今日</strong></p>
+        <p><strong>头条</strong></p>
+      </div>
+    </ion-col>
+    <ion-col width-70 class="new-bar-content">{{fistNews.title}}</ion-col>
+    <ion-col width-10 class="next">
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+    </ion-col>
+  </ion-row>-->
+  <!--
+  <ion-grid class="ads-grid">
+    <ion-row>
+      <ion-col>
+        <img [src]="ads_big" (click)="goAdPage()">
+      </ion-col>
+
+      <ion-col (click)="goAdPage()">
+        <div><img [src]="ads_small_1"></div>
+        <div><img [src]="ads_small_2"></div>
+      </ion-col>
+
+    </ion-row>
+ 
+  </ion-grid>-->
+
+
+  <!--     <ion-slides autoplay=2000 pager=true loop=true class="center-banner">
+      <ion-slide class="slide_img">
+       <img class="banner_img" [src]="lunbo1" onerror="javascript:this.src='assets/img/banner_sides1.png';">
+      </ion-slide>
+       <ion-slide class="slide_img">
+       <img class="banner_img" [src]="lunbo2" onerror="javascript:this.src='assets/img/banner_sides2.png';">
+      </ion-slide>
+    </ion-slides>
+ -->
+
+
+
+  <ion-slides *ngIf="banners.length>=1" class="center-banner focus" pager  loop="true" autoplay="3000">
+    <ion-slide [ngClass]="slide_img" *ngFor="let item of banners" (tap)="onBannerClick(item)">
+      <img class="banner_img" src={{item.imgsrc}}>
+    </ion-slide>
+  </ion-slides>
+  <div class="banner_bottoom">
+    <ion-row>
+      <ion-col class="youhui row_col" (tap)="goNextPage(wodeyouhui.id,youhui,qipao)">
+        <img [src]="wodeyouhui.img">
+        <span>{{wodeyouhui.txt}}</span>
+        <i *ngIf='!wodeyouhui.youhuishow'>{{wodeyouhui.number}}</i>
+      </ion-col>
+
+      <!-- <ion-col class="youhui row_col" (tap)="goNextPage(myoder.id)" >
+      <img [src]="wodeyouhui.img">
+      <span>{{myoder.txt}}</span>
+  </ion-col> -->
+
+      <ion-col class="youhui row_col rush" (tap)="goNextPage(xianshiyouhui.id)">
+        <img [src]="xianshiyouhui.img">
+        <span class="hot-text">{{xianshiyouhui.txt}}</span>
+        <!--<img class="hot" [src]='hot_img'>-->
+      </ion-col>
+
+      <ion-col class="youhui row_col" (tap)="goNextPage(zhaopin.id)">
+        <img [src]="zhaopin.img">
+        <span>{{zhaopin.txt}}</span>
+      </ion-col>
+
+    </ion-row>
+  </div>
+
+  <!--<ion-toolbar class="park_toolbar">
+    <span start class="toolbar-title">附近门店</span>
+  </ion-toolbar>-->
+
+  <!--<div class="dingweishezhi" *ngIf='dingweishibai'>
+      <h3>柚子君没能成功获取您的位置定位</h3>
+      <p class="jiejue">您可以这样解决</p>
+      <p class="huoqu">1、<span class="shuaxin" (click)='refreshAgain()'>点击刷新</span>，重新获取定位。</p>
+      <p class="huoqu">2、若依然不能定位，请检查手机定位功能是否打开，或检查是否开启了手机定位服务权限。</p>
+      <p class="shiezhifuwu"><span class="shezhi" (click)='toPreference()'>点击此处</span>去设置服务权限</p>
+    </div>
+    <p class="fujinmendian" *ngIf='fujinmendian'>附近暂无门店!</p>
+  <ion-list id="home_ion_list">
+    <ion-item class="item" *ngFor="let item of guessLikeShops" (tap)="getShopDetails(item)" >
+      <img [src]="storefaceurl_300+item.storeface" [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+      <div class="item-header">{{item.storename}}</div>
+      <div class="price" ><span class="prices" *ngIf="!item.val">商品数:{{item.goodscount}}</span><span class="pricec" *ngIf="!item.Val">消费{{item.buycount}}次</span></div>
+      <div class="item-address">{{item.storeaddr}}</div>
+      <div class="item-right">{{item.distance}}</div>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+
+
+
+  <div class="sign">
+    <span class="gosign" (click)='goTurntable()'>
+      <img [src]='choujiang'>
+    </span>
+
+    <p id='marquees' class="prize">
+      <marquee behavior="scroll" direction='up'  loop='-1' scrollamount="2" width="100%">
+        <span *ngFor="let item of systemMessages">{{item.title}}</span>
+        <!-- <span>恭喜158****3219用户段誉抽到价值40000块的2手5000公斤手动洗衣机滚筒一个 <span class="coverUp"></span></span> -->
+        <!-- <span>恭喜158****3219用户段誉抽到价值1300块的2手50公斤手动洗衣机滚筒一个</span>
+        <span>恭喜158****3219用户段誉抽到价值925000块的2手5000公斤手动洗衣机滚筒一个</span>
+        <span>恭喜158****3219用户段誉抽到价值140块的2手50公斤手动洗衣机滚筒一个</span> -->
+      </marquee>
+      
+    </p>
+  </div>
+
+
+  <div class="xianshi-scroll">
+    <div class="xianshiyouhui">
+      <span (click)='notification()' class='xianshi col_weight'>限时优惠</span>
+      <span class='qidai' *ngIf='!scrollShow'>敬请期待！</span>
+      <span class='shengyu' *ngIf='scrolltimes'>剩余：{{rushtimes}}</span>
+      <span class="more" (tap)="gengduo()" *ngIf='scrollShow'>查看更多
+        <span class="jiantou">></span>
+      </span>
+    </div>
+    
+    <ion-scroll scrollX="true" class="div-scroll" *ngIf='scrollShow'>
+      <div *ngFor="let item of rushlist" name="radio-button-on" class="scroll-item selectable-icon scroll-list">
+        <P>
+          <img (click)='goRush(item)' class="scrollX-img" [src]="goodsface_300+item.goodsface" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"
+          />
+        </P>
+        <P class="price">{{'￥'+item.sellprice/100}}</P>
+        <P class="unprice">{{'￥'+item.marketprice/100}}</P>
+      </div>
+    </ion-scroll>
+
+  </div>
+
+
+  <ion-row class="ion_row">
+    <ion-col class="info-col ">
+      <div class="col_value col_row" (tap)='godelivery()'>
+        <P class="col_p1 col_weight">3公里免费送货上门</P>
+        <P class="">
+          <ion-row class="p-row">
+            <ion-col>
+              <img class="banner_img" [src]='there1' onerror="javascript:this.src='assets/img/banner_sides2.png';">
+
+            </ion-col>
+            <span style="width:1px;"></span>
+            <ion-col>
+              <img class="banner_img" [src]='there2' onerror="javascript:this.src='assets/img/banner_sides2.png';">
+            </ion-col>
+          </ion-row>
+        </P>
+      </div>
+      <div class="col_key col_row" (tap)='goSignIn()'>
+        <P class="col_p1 col_p2 col_weight">赚流量赢话费</P>
+        <P class="col_p3">
+          <img class="banner_img" [src]='sy_banner' onerror="javascript:this.src='assets/img/banner_sides2.png';">
+        </P>
+      </div>
+    </ion-col>
+
+    <ion-col class="info-col info_position" (tap)='myShopOnClick()'>
+      <div class="col_value col_p1 col_weight">金浦1212家装节</div>
+      <div class="col_key2">
+        <img class="banner_img" [src]='jinxuan' onerror="javascript:this.src='assets/img/banner_sides2.png';">
+      </div>
+    </ion-col>
+
+  </ion-row>
+  <div class="cainixihuan_title">
+    <p class="Ilike">
+        <img class="icon_cainixihuan" [src]='icon_cainixihuan'>
+        <span class="cainixihuan">猜你喜欢</span>
+    </p>
+
+    
+    <span class="gengxin" (click)="guesslike()">换一批</span>
+    <img class="icon_gengxin" [src]= 'icon_gengxin' (click)="guesslike()">
+  </div>
+  <ion-grid class="guesslike">
+    <ion-row *ngFor="let grid of hotGoodRows">
+      <ion-col class="col guesslike-col" *ngFor="let item of grid" (tap)="goDetailPage(item)" col-6>
+        <div class="guesslikeinfo">
+          <img [src]="goodsface_900+item.goodsface" class="guesslikeimg" onerror="javascript:this.src='assets/img/bm_imge@2x.png';">
+          <p class="guesslikename p_margin">{{item.goodsname}}</p>
+          <p class="guesslikeprice p_margin">
+            <span class="saleprice">{{'￥'+item.sellprice/100}}
+            <span class="preprice">{{'￥'+item.marketprice/100}}</span>
+            </span>
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

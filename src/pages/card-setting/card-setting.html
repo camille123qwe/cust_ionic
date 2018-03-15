@@ -1,0 +1,79 @@
+<!--
+  Generated template for the CardSetting page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>确认添加</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--// {"cardid":1255100000065569,"cardpwd":"683945613335","cashvalue":0,"createtime":1491364686298,"custuserid":0,"distributetime":0,"
+// fluxPackage":{"createtime":1486984821349,"dxfluxkbs":30720,"fluxpkgid":100001,"ltfluxkbs":20480,"merchdxmoney":500,"merchltmoney":300,"merchydmoney":500,
+                    "pkgscope":10,"pkgtitle":"全国流量30M(联通20M)","status":10,"ydfluxkbs":30720},
+// "fluxpkgid":100001,"managerid":0,"merchid":30000001,"salerid":0,"status":10,
+// "storeInfo":{"buycount":0,"city":"深圳市","costcashvalues":0,"costfluxkbs":0,"costmoney":26116,"costvoicetimes":2724160,"createtime":1487669626887,
+                  "custusercount":2,"distance":0,"goodscount":4,"goodsradio":53,"latitude":22.549209,"longitude":113.965367,"merchid":30000001,"msmscount":1,"province":"广东省"
+                  ,"quancount":12,"seen":4,"status":20,"store36id":"evu4n","storeaddr":"尚美科技大厦403","storeface":"6e358akdnroigd8osb3hg8vh5r.jpg","storeid":25000007,
+                  "storeman":"张生","storename":"红柚子科技大冲店"},
+// "storeid":25000007,"usetime":0,"validday":0,"voicetimes":0,"opts":{"showBackdrop":true,"enableBackdropDismiss":true}}-->
+<ion-content>
+  <div class="myCard">
+      <!--*ngFor="let item of Cards_res"-->
+    <div class="cardTop">
+      <div class="chne">
+        <div class="conscard">
+          <img src="assets/img/yhkbd_logo@2x.png">
+        </div>
+        <p class="cardp">
+            <span class="cardth">
+              {{youhuiList[0]}} {{youhuiList[1]}} {{youhuiList[2]}}
+<!--
+               30M流量
+
+            
+              60分钟通话 
+           
+                500优惠券-->
+            </span>
+            
+            <span class="redcard">
+                {{storename}}
+            </span>
+            
+            <!--<span class="Tenhnology">
+                redyouzi Tenhnology
+            </span>-->
+          </p>
+        </div>
+        <div class="chnes">  
+          <p>
+            <span class="flo">
+             {{'卡号：'+Cards_res.cardid}}
+            </span>
+            <span class="span_t">
+              
+               {{'地址：'+storeaddr}}
+              
+            </span>
+          </p>
+          <p class="span_b">
+            <!--有效期：2017-04-03-->
+           {{dataday}}
+          </p>
+        </div>
+    </div>
+  </div>
+  <div class="btns">
+    <button class="btn_o" (tap)='Trues(gonextpage)'>
+      确定
+    </button> 
+     <button class="btn_t" (tap)='Falses()'>
+      取消
+    </button>  
+  </div>
+</ion-content>

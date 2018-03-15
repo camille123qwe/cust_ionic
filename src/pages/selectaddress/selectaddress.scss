@@ -1,0 +1,64 @@
+page-selectaddress {
+    .content{
+        background: #f2f2f2;
+    }
+        
+.item-inner{
+    border-bottom: none!important;
+}
+.divideSpan{
+    background: #eaeaea;
+    height: 10px;
+    width: 100%;
+}
+ion-item-sliding{
+    border-bottom:1px solid #f2f2f2 !important;
+}
+.item-checkbox{
+    min-height: 0;
+    height: 24px;
+}
+
+.label-ios{
+    margin:0 !important;
+    font-size: 12px;
+    
+}
+
+.addr{
+    color: #333;
+    white-space:normal;
+    font-size: 14px;
+    margin-top: 10px !important;
+}
+.shipname,.tel{
+    color: #666;
+    width: 40%;
+}
+.shipname{
+    display: inline-block;
+    padding-right: 15px;
+}
+.defalttext{
+    color: #fb6d07;
+    float: right;
+}
+img{
+    margin-right: 7px;
+    vertical-align: middle;
+}
+.item-ios p {
+    overflow: inherit;
+    margin: 0 0 0;
+    font-size: 1.4rem;
+    line-height: normal;
+    text-overflow: inherit;
+    color: #8e9093;
+}
+.managetext{
+    font-size: 14px;
+}
+.info{
+    margin: 10px 0 10px !important;
+}
+}

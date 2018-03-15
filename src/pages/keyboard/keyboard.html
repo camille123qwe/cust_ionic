@@ -1,0 +1,48 @@
+<!--<ion-grid class="keyboard-grid">
+  <ion-row center>
+    <ion-col >1</ion-col>
+    <ion-col >1</ion-col>
+    <ion-col >1</ion-col>
+  </ion-row>
+    <ion-row center>
+    <ion-col >1</ion-col>
+    <ion-col >1</ion-col>
+    <ion-col >1</ion-col>
+  </ion-row>
+    <ion-row center>
+    <ion-col >1</ion-col>
+    <ion-col >1</ion-col>
+    <ion-col >1</ion-col>
+  </ion-row>
+</ion-grid>-->
+
+<div class="call-phonenumber">
+  
+  <span >{{newphone}}</span>
+  <!--<ion-title #phone_number>{{phone_number}}</ion-title>-->
+</div>
+<ion-grid class="keyboard-grid">
+  <ion-row center>
+    <ion-col (tap)="getNumber('1')">1</ion-col>
+    <ion-col (tap)="getNumber('2')">2</ion-col>
+    <ion-col (tap)="getNumber('3')">3</ion-col>
+  </ion-row>
+  <ion-row center>
+    <ion-col (tap)="getNumber('4')">4</ion-col>
+    <ion-col (tap)="getNumber('5')">5</ion-col>
+    <ion-col (tap)="getNumber('6')">6</ion-col>
+  </ion-row> 
+  <ion-row center>
+    <ion-col (tap)="getNumber('7')">7</ion-col>
+    <ion-col (tap)="getNumber('8')">8</ion-col>
+    <ion-col (tap)="getNumber('9')">9</ion-col>
+  </ion-row>
+  <ion-row center> 
+    <ion-col (tap)="getNumber('#')">#</ion-col>
+    <ion-col (tap)="getNumber('0')">0</ion-col>
+    <ion-col (tap)="getNumber('delete')">
+      <img src="assets/img/icon_shangshu@2x.png" alt="delete" class="img-delete"/>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+

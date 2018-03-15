@@ -1,0 +1,38 @@
+<!--
+  Generated template for the SelectaddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title >选择收货地址</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="manageAdd()">
+        <span  class="managetext">管理</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="content">
+  <ion-list>
+    <ion-item-sliding class="item" *ngFor="let item of myaddr">
+      <ion-item (tap)='selectAdd(item)'>
+        <p class="addr">{{item.address}}</p>
+        <p class="info">
+          <span class="shipname">{{item.receivername}}</span>
+          <span class="tel">{{item.mobile}}</span>
+          <span class="defalttext" *ngIf="item.defaultorno == 10" >默认地址</span> 
+        </p>
+      </ion-item>
+      <!--<ion-item-options side="right">
+        <button ion-button color="danger" (tap)="rmaddress(item)">
+          删除
+        </button>
+      </ion-item-options>-->
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

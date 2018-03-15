@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle (tap)="Back()" >
+  	 <ion-icon ios="ios-arrow-back" md="ios-arrow-back"  class="orange"></ion-icon>
+  	</button>
+    <ion-title>门店图片</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+ 
+
+<ion-content>
+  <ion-slides initialSlide={{IMG_index}} [hidden]='leg'>
+    <ion-slide *ngFor="let item of IMGs" >
+     
+      <img [src]='item.bigimg' (press)='saveImg(showImgUrl,imgUrl,imgId)'>
+      <!--  长按图片保存的方法-->
+    
+    </ion-slide>
+  </ion-slides>
+  
+  <ion-slides initialSlide={{IMGp_index}} [hidden]='pru'>   
+    <ion-slide *ngFor="let item of IMGs_p">
+      <img [src]='item.bigimg' (press)='saveImg(showImgUrl,imgUrl,imgId)'>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,29 @@
+<!--
+  Generated template for the GiveflowsSuccess page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>赠送成功</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div style="text-align: center;padding-top:65px">
+       <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" class="rightcirlce" color="orange" center></ion-icon>
+  </div>
+  <div style="text-align: center;padding-top:20px;font-size:21px;color:#333">赠送成功</div>
+  <div *ngIf="needlogin" >
+  <p class="reginfo">您的好友还不是店呼用户</p>
+  <button ion-button block color="orange" (click)="fenxiang()">马上告诉好友</button>
+  </div>
+</ion-content>
+
+
+<!--rows===1[{"action":"流量池赠送","attachid":"3b2ozl-201707","createtime":1500022456553,"custmessageid":"3b2ozl0j53mn2zt","custuserid":200000001,
+"module":"流量池赠送","objectid":"3b2ozl-0j53mn2yy","readtime":0,"status":10}]-->

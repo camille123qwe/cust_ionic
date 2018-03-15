@@ -1,0 +1,6 @@
+
+    <ion-slides autoplay=2000 pager=false  loop=false parallax=false  class="center-banner">
+      <ion-slide  *ngFor="let item of banners">
+       <img class="banner_img" src={{item}} onerror="javascript:this.src='assets/img/bg_imge@2x.png';">
+      </ion-slide>
+    </ion-slides>

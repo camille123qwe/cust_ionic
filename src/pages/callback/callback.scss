@@ -1,0 +1,39 @@
+page-callback {
+    page-callback{
+        height: 100%;
+    }
+        .callback{
+            width: 100%;
+            height: 100%;
+            background-image: url(../assets/img/cb_img.png);
+            background-size:100% ;
+            background-repeat:no-repeat ;
+            text-align: center;
+        }
+        .huibo{
+            height: 40px;
+            font-size: 16px;
+            line-height: 40px;
+            color:#fd832b;
+            padding-top: 130px;
+            
+        }
+        p{
+            height: 30px;
+            padding: 3px;
+            margin-top: 20px;
+            color:#fd832b;
+            font-size: 14px;
+            line-height: 30px;
+            
+        }
+        .btn_hui{
+            width: 30%;
+            height: 40px;
+            border-radius: 22px;
+            background-color: red;
+            margin-top: 300px;
+            color: #fff;
+            font-size: 18px;
+        }
+}
